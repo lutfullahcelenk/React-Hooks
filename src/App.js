@@ -29,7 +29,14 @@ function App () {
 
   const filteredStudents = useMemo(()=> studentsList.filter(student=>{
     return student.name.toLowerCase().includes(search.toLowerCase())
-  }),[search, studentsList])
+  }),[search, studentsList]);
+
+  const add = () => {
+    setStudentList(
+      [...studentsList,
+        {id: studentsList.length+1 , name:"Lütfullah ÇELENK"}
+      ])
+  }
 
   return(
     <div className="App">
@@ -44,7 +51,10 @@ function App () {
       <button onClick={handleSearch}>Search</button>
 
       {/* <List students={studentsList}/> */}
-      <List students={filteredStudents}/>
+      <List 
+        students={filteredStudents}
+        add = {add}
+      />
     </div>
   )
 }
