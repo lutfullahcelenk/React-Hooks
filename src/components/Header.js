@@ -54,7 +54,7 @@ export default memo(Header);
 
 
 //************Yine memo ile en sona ekleme */
-// const Header = React.memo(({img}) => {
+// const Header = (({img}) => {
 
 //     console.log("Rendering: Header Comp!");
   

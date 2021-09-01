@@ -8,7 +8,7 @@ const List = ({ students, add }) => {
       {students?.map((student) => {
         return <ListItem key={student.id} student={student} add={add} />;
       })}
-      
+
     </div>
   );
 };
