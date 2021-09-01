@@ -11,9 +11,9 @@ const Header = () => {
                 alt="CW Logo"
                 style={{margin:"1rem", maxHeight:"200px"}}
             />
-            
+
         </div>
     )
 }
 
-export default Header
+export default Header;
