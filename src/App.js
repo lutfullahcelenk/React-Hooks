@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import './App.css';
 import Header from "./components/Header";
 import List from "./components/Header";
@@ -10,6 +10,13 @@ function App() {
 
   const[counter,setCounter] = useState(0);
   const[img,setImg] = useState();
+  const[studentList,setStudentList] = useState();
+
+  useEffect(() => {
+      axios.get("https://jsonplaceholder.typicode.com/users")
+      // .then(res => console.log(res))
+      .then((res) => setStudentList(res.data))
+  })
 
 
   return (
@@ -23,7 +30,7 @@ function App() {
       <button onClick={() => setImg("")}>RESET</button>
       <hr />
 
-      <List />
+      <List studentList={studentList}/>
     </div>
   );
 }
