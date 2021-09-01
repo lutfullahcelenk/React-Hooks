@@ -19,6 +19,7 @@ function App() {
       <button onClick={() => setCounter(counter+1)}>Increase</button>
       <button onClick={() => setImg(fs)}>FS</button>
       <button onClick={() => setImg(aws)}>AWS</button>
+      <button onClick={() => setImg("")}>RESET</button>
 
     </div>
   );
