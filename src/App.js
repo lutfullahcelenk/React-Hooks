@@ -1,4 +1,4 @@
-import React,{useState, useEffect, useMemo} from "react";
+import React,{useState, useEffect, useMemo, useCallback} from "react";
 import Header from "./components/Header";
 import List from "./components/List";
 import fs from "./assets/fs.png";
@@ -31,12 +31,12 @@ function App () {
     return student.name.toLowerCase().includes(search.toLowerCase())
   }),[search, studentsList]);
 
-  const add = () => {
+  const add = useCallback(() => {
     setStudentList(
       [...studentsList,
         {id: studentsList.length+1 , name:"Lütfullah ÇELENK"}
       ])
-  }
+  },[studentsList])
 
   return(
     <div className="App">
