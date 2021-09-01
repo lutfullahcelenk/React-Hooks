@@ -5,6 +5,8 @@ const List = React.memo(({ students, add }) => {
   return (
     <div className="list">
 
+        <button onClick={() => add()}>ADD</button>
+
       {students?.map((student) => {
         return <ListItem key={student.id} student={student} add={add} />;
       })}
