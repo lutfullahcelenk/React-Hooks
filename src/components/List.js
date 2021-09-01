@@ -1,7 +1,7 @@
 import React from "react";
 import ListItem from "./ListItem";
 
-const List = ({ students, add }) => {
+const List = React.memo(({ students, add }) => {
   return (
     <div className="list">
 
@@ -11,6 +11,6 @@ const List = ({ students, add }) => {
 
     </div>
   );
-};
+});
 
 export default List;
