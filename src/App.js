@@ -27,6 +27,10 @@ function App () {
     setSearch(text);
   }
 
+  const filteredStudents = studentsList.filter((student => {
+    return student.name.toLowerCase().includes(search.toLowerCase())
+  }))
+
   return(
     <div className="App">
       <Header img={img}/> {/*içerisine img useState i verdik ve buttonlar sayesinde Header içersinde değişiklik yapıp Header ı render ettirdik.. Header içerisine props yolladık.. props ile değişiklik olduğu için memo olsa da Header render edilecek*/}
@@ -39,7 +43,8 @@ function App () {
       <input type="text" value={text} onChange={handleText}/>
       <button onClick={handleSearch}>Search</button>
 
-      <List students={studentsList}/>
+      {/* <List students={studentsList}/> */}
+      <List students={filteredStudents}/>
     </div>
   )
 }
