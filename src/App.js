@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useMemo} from "react";
 import Header from "./components/Header";
 import List from "./components/List";
 import fs from "./assets/fs.png";
@@ -10,9 +10,9 @@ function App () {
   const [img, setImg] = useState()
   const [studentsList, setStudentList] = useState([]);
   const [text, setText] = useState("");
-  // console.log(`text`, text)
+  console.log(`text`, text)
   const [search, setSearch] = useState("");
-  // console.log(`search`, search)
+  console.log(`search`, search)
 
 
   useEffect(()=>{
@@ -27,9 +27,9 @@ function App () {
     setSearch(text);
   }
 
-  const filteredStudents = studentsList.filter((student => {
+  const filteredStudents = useMemo(()=> studentsList.filter(student=>{
     return student.name.toLowerCase().includes(search.toLowerCase())
-  }))
+  }),[search, studentsList])
 
   return(
     <div className="App">
