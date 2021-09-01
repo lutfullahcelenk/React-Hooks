@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       
-      <Header />
+      <Header img={img} />
       <p>Counter: {counter}</p>
       <button onClick={() => setCounter(counter+1)}>Increase</button>
       <button onClick={() => setImg(fs)}>FS</button>
