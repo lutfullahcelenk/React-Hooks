@@ -10,7 +10,9 @@ function App () {
   const [img, setImg] = useState()
   const [studentsList, setStudentList] = useState([]);
   const [text, setText] = useState("");
+  // console.log(`text`, text)
   const [search, setSearch] = useState("");
+  // console.log(`search`, search)
 
 
   useEffect(()=>{
@@ -36,7 +38,7 @@ function App () {
       <hr/>
       <input type="text" value={text} onChange={handleText}/>
       <button onClick={handleSearch}>Search</button>
-      
+
       <List students={studentsList}/>
     </div>
   )
