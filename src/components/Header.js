@@ -1,10 +1,10 @@
 import React from "react";
 import cw from "../assets/cw_logo.png";
 
-const Header = ({img}) => {
+const Header = React.memo(({img}) => {
 
   console.log("Rendering: Header Comp!");
-  
+
   return (
     <div className="header">
       <img
@@ -14,5 +14,6 @@ const Header = ({img}) => {
       />
     </div>
   );
-};
+});
+
 export default Header;
