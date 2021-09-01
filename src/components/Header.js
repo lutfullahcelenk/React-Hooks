@@ -1,7 +1,7 @@
 import React, {memo} from "react";
 import cw from "../assets/cw_logo.png";
 
-const Header = React.memo(({img}) => {
+const Header = ({img}) => {
 
   console.log("Rendering: Header Comp!");
 
@@ -14,7 +14,7 @@ const Header = React.memo(({img}) => {
       />
     </div>
   );
-});
+};
 
 export default memo(Header);
 
